@@ -21,6 +21,33 @@
 				})
 			});
 		</script>
+		<script src="js/cloud.js">
+			
+		</script>
+		<!--验证必填-->
+		<script>
+			function check() {
+				
+				var name = document.getElementById('txt1').value;
+				var pwd = document.getElementById('txt2').value;
+		
+				if(name.length == 0) 
+				{
+					alert("请填写用户名")
+					return;
+				}
+				else if(pwd.length == 0)
+				{
+					alert("请填写密码")
+					return;
+				}
+				else
+				{
+					window.location.href = "main.html";
+				}
+			}
+		</script>
+		
 	</head>
 	<body style="background-color: #1c77ac; background-image: url(img/light.png);">
 		
@@ -48,12 +75,16 @@
 			<span class="systemLogo"></span>
 			<div class="loginBox">
 				<ul>
-					<li><input type="text" class="loginUser"/></li>
-					<li><input type="password" class="loginPwd"/></li>
-					<li><input type="button" class="loginBtn" value="确定"/> </li>
+					<li><input type="text" class="loginUser" onclick="javascript:this.value=''" id="txt1"/></li>
+					<li><input type="password" class="loginPwd" onclick="javascript:this.value=''" id="txt2"/></li>
+					<li><input type="button" class="loginBtn" value="确定" onclick="check()"/> </li>
 				</ul>
 			</div>
 		</div>
-		
+		<!--底部-->
+		<div class="loginbm">
+			2019Java01_GJM@版权所有
+			
+		</div>
 	</body>
 </html>
